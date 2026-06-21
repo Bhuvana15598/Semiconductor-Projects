@@ -11,11 +11,11 @@ Methodology:
 
 The model evaluates:
 
-AlGaN material properties vs. Al content — implied
-Strain on GaN substrate — implied intermediate step.
-Spontaneous polarization — blue curve.
-Piezoelectric polarization —  orange curve.
-Total polarization charge at interface — green curve.
+1. AlGaN material properties vs. Al content - implied
+2. Strain on GaN substrate - implied intermediate step.
+3. Spontaneous polarization — blue curve.
+4. Piezoelectric polarization —  orange curve.
+5. Total polarization charge at interface — green curve.
 
 The results are presented through plots showing polarization contributions and carrier density variation with aluminum composition.
 
