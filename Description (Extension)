@@ -9,6 +9,6 @@ Features
 4. Triangular potential well formation at the interface
 
  Example Result
-[Band bending](./Band%20bending.png)
+![Band bending](./Band%20bending.png)
 
 Simulated conduction band profile showing polarization-induced band bending and triangular well formation at the AlGaN/GaN interface.
