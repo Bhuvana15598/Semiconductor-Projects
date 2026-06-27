@@ -189,63 +189,8 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-# Graph 3: Band Diagram
 
 
-x_al = 0.30
 
-# Conduction band offset
-delta_Ec = conduction_band_offset(x_al)
-
-# Polarization charge density
-sigma = sheet_charge_density(x_al)
-
-# Permittivity of AlGaN
-eps0 = 8.854e-12          # F/m
-eps_r = 9.0               # approximate AlGaN dielectric constant
-eps = eps_r * eps0
-
-# Controlled band bending
-bend_amount = 0.6   # eV across barrier
-
-# Electric field in AlGaN
-E_field = sigma / eps     # V/m
-
-# Barrier thickness
-t_barrier_nm = 20
-t_barrier_m = t_barrier_nm * 1e-9
-
-# Position axis
-x1 = np.linspace(0, t_barrier_nm, 200)      # AlGaN
-x2 = np.linspace(t_barrier_nm, 100, 300)    # GaN
-
-# Band bending in AlGaN
-Ec_algan = delta_Ec - bend_amount * (x1 / t_barrier_nm)
-#Ec_algan = delta_Ec - E_field * (x1 * 1e-9)
-
-# Shift so interface energy matches GaN reference
-Ec_algan = Ec_algan - Ec_algan[-1]
-
-# Simple triangular well in GaN
-Ec_gan = -0.15 * np.exp(-(x2 - t_barrier_nm)/10)    
-# Ec_gan = Ec_algan[-1] - 0.15 * np.exp(-(x2 - t_barrier_nm)/10)
-
-# Plot
-plt.figure(figsize=(9,5))
-
-plt.plot(x1, Ec_algan, linewidth=3, label='AlGaN')
-plt.plot(x2, Ec_gan, linewidth=3, label='GaN')
-
-plt.axvline(t_barrier_nm,
-            linestyle='--',
-            color='black',
-            label='Interface')
-
-plt.xlabel("Position (nm)")
-plt.ylabel("Conduction Band Energy (eV)")
-plt.title(f"Band Bending in AlGaN/GaN HEMT (x = {x_al:.2f})")
-
-plt.legend()
-plt.grid(True)
 plt.tight_layout()
 plt.show()
